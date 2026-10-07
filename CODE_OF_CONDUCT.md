@@ -1,39 +1,41 @@
-# Code de Conduite de la Communauté AxSound
+# AxSound Community Code of Conduct
 
-## Notre Engagement
+**English | [Français](CODE_OF_CONDUCT.fr.md)**
 
-En tant que membres, contributrices, contributeurs et responsables du projet **AxSound**, nous nous engageons à faire de la participation à notre communauté une expérience exempte de tout harcèlement, quel que soit l'âge, la taille corporelle, le handicap visible ou invisible, l'origine ethnique, les caractéristiques sexuelles, l'identité et l'expression de genre, le niveau d'expérience, l'éducation, le statut socio-économique, la nationalité, l'apparence physique, la race, la religion, ou l'identité et l'orientation sexuelle.
+## Our Pledge
 
-Nous nous engageons à agir et à interagir de manière à contribuer à une communauté ouverte, accueillante, diverse, inclusive et saine.
+As members, contributors and maintainers of the **AxSound** project, we pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
----
-
-## Nos Normes
-
-Exemples de comportements qui contribuent à un environnement positif :
-* Faire preuve d'empathie et de bienveillance envers autrui.
-* Être respectueux des points de vue, opinions et expériences divergentes.
-* Donner et recevoir des retours constructifs avec courtoisie.
-* Accepter la responsabilité de ses erreurs, s'excuser auprès des personnes affectées et apprendre de ses expériences.
-* Se concentrer sur ce qui est le mieux pour la communauté dans son ensemble.
-
-Exemples de comportements inacceptables :
-* L'utilisation d'un langage ou d'images à connotation sexuelle.
-* Les attaques personnelles ou politiques, le trolling et les commentaires désobligeants.
-* Le harcèlement sous toutes ses formes, public ou privé.
-* La publication des informations privées d'autrui sans leur permission expresse.
-* Tout comportement pouvant être raisonnablement considéré comme inapproprié dans un cadre professionnel.
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive and healthy community.
 
 ---
 
-## Application et Responsabilités
+## Our Standards
 
-Les responsables du projet sont garants du respect de ces normes et prendront des mesures correctives équitables en réponse à tout comportement jugé inapproprié, menaçant ou nuisible.
+Examples of behavior that contributes to a positive environment:
+* Demonstrating empathy and kindness toward other people.
+* Being respectful of differing opinions, viewpoints and experiences.
+* Giving and gracefully accepting constructive feedback.
+* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience.
+* Focusing on what is best not just for us as individuals, but for the overall community.
 
-Les responsables du projet ont le droit et la responsabilité de supprimer, modifier ou rejeter tout commentaire, commit, code, issue ou pull request non conforme à ce code de conduite.
+Examples of unacceptable behavior:
+* The use of sexualized language or imagery, or unwelcome sexual attention.
+* Trolling, insulting or derogatory comments, and personal or political attacks.
+* Public or private harassment.
+* Publishing others' private information without their explicit permission.
+* Other conduct which could reasonably be considered inappropriate in a professional setting.
 
 ---
 
-## Signalement
+## Enforcement Responsibilities
 
-Les cas de comportements abusifs ou inacceptables peuvent être signalés auprès des responsables du projet par les canaux de contact indiqués sur le dépôt officiel. Toutes les plaintes seront examinées promptement et équitablement dans le respect de la confidentialité.
+Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive or harmful.
+
+Project maintainers have the right and responsibility to remove, edit or reject comments, commits, code, issues and other contributions that are not aligned with this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+
+---
+
+## Reporting
+
+Instances of abusive, harassing or otherwise unacceptable behavior may be reported to the project maintainers through the contact channels listed in the official repository. All complaints will be reviewed and investigated promptly and fairly, with confidentiality respected.

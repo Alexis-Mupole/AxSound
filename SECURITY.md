@@ -1,29 +1,31 @@
-# Politique de Sécurité — AxSound 🔒
+# Security Policy — AxSound 🔒
 
-La sécurité et la protection de la vie privée des utilisatrices et utilisateurs de **AxSound** sont des priorités absolues. AxSound est conçu comme une application strictement hors-ligne : elle ne transmet aucune donnée personnelle ni audio vers des serveurs distants.
+**English | [Français](SECURITY.fr.md)**
+
+The security and privacy of **AxSound** users are absolute priorities. AxSound is designed as a strictly offline application: it transmits no personal data or audio to remote servers.
 
 ---
 
-## Versions Prises en Charge
+## Supported Versions
 
-Nous publions des correctifs de sécurité pour les versions récentes du projet :
+We publish security fixes for recent versions of the project:
 
-| Version | Prise en charge |
+| Version | Support |
 | :--- | :--- |
-| 1.0.x | :white_check_mark: Oui |
-| < 1.0.0 | :x: Non |
+| 1.0.x | :white_check_mark: Yes |
+| < 1.0.0 | :x: No |
 
 ---
 
-## Signaler une Vulnérabilité
+## Reporting a Vulnerability
 
-Si vous découvrez une faille de sécurité (par exemple un problème lié au déni de service, une mauvaise gestion des autorisations ou un traitement non sécurisé des intents externes `android.intent.action.VIEW`) :
+If you discover a security flaw (for example a denial-of-service issue, improper permission handling or insecure processing of external `android.intent.action.VIEW` intents):
 
-1. **Ne divulguez pas la faille publiquement** sur les issues GitHub.
-2. Envoyez un rapport détaillé par e-mail aux responsables du projet avec l'objet : `[SECURITY] Vulnérabilité AxSound`.
-3. Incluez dans votre rapport :
-   - Une description détaillée de la vulnérabilité.
-   - Les étapes ou un script de preuve de concept (PoC) pour la reproduire.
-   - L'impact potentiel sur le système ou les données locales.
+1. **Do not disclose the flaw publicly** on GitHub issues.
+2. Send a detailed report by email to the project maintainers with the subject: `[SECURITY] AxSound Vulnerability`.
+3. Include in your report:
+   - A detailed description of the vulnerability.
+   - Steps or a proof-of-concept (PoC) script to reproduce it.
+   - The potential impact on the system or local data.
 
-Nous nous engageons à accuser réception de votre signalement sous 48 heures ouvrées et à vous tenir informé(e) de l'avancée du correctif avant toute communication publique.
+We commit to acknowledging your report within 48 business hours and keeping you informed of the fix's progress before any public disclosure.

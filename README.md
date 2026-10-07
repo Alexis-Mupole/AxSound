@@ -1,124 +1,126 @@
 # AxSound 🎵
 
+**English | [Français](README.fr.md)**
+
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-blue.svg)](https://kotlinlang.org)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-26-orange.svg)](https://developer.android.com/about/dashboards)
 [![Target SDK](https://img.shields.io/badge/Target%20SDK-36-purple.svg)](https://developer.android.com)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
 
-**AxSound** est un lecteur de musique hors-ligne haute-fidélité pour Android conçu pour offrir une pureté sonore sans compromis, un moteur de gain sonore surpuissant jusqu'à 400%, une personnalisation visuelle poussée et une consommation de batterie minimale grâce au décodage DSP matériel (*Audio Offload*).
+**AxSound** is an offline high-fidelity music player for Android, designed to deliver uncompromised sound purity, a powerhouse volume boost of up to 400%, deep visual customization and minimal battery drain thanks to hardware DSP decoding (*Audio Offload*).
 
 ---
 
-## ⬇️ Téléchargement
+## ⬇️ Download
 
 [![Download AxSound](https://img.shields.io/badge/Download-AxSound.apk-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Alexis-Mupole/AxSound/raw/main/AxSound.apk)
 
-> **Sûr et vérifiable** : cet APK est construit à partir du code open-source publié dans ce dépôt, sans code malveillant, sans publicité, sans tracking ni collecte de données. Vous pouvez librement l'inspecter, le compiler vous-même et comparer les binaires.
+> **Safe and verifiable**: this APK is built from the open-source code published in this repository — no malicious code, no ads, no tracking and no data collection. You are free to inspect it, rebuild it yourself and compare the binaries.
 >
-> **Empreinte SHA-256** de `AxSound.apk` :
+> **SHA-256 fingerprint** of `AxSound.apk`:
 > ```
 > 94d575f59c2f51a8ed184780612356a23242e16d680a2e74ed073b959fa70df6
 > ```
 >
-> Vérification : `certutil -hashfile AxSound.apk SHA256` (Windows) ou `sha256sum AxSound.apk` (Linux/macOS).
+> Verification: `certutil -hashfile AxSound.apk SHA256` (Windows) or `sha256sum AxSound.apk` (Linux/macOS).
 
 ---
 
-## 📸 Captures d'écran
+## 📸 Screenshots
 
 <table>
   <tr>
-    <td align="center"><img src="axs/1.jpeg" alt="AxSound — capture d'écran 1" width="260"/></td>
-    <td align="center"><img src="axs/2.jpeg" alt="AxSound — capture d'écran 2" width="260"/></td>
-    <td align="center"><img src="axs/3.jpeg" alt="AxSound — capture d'écran 3" width="260"/></td>
+    <td align="center"><img src="axs/1.jpeg" alt="AxSound — screenshot 1" width="260"/></td>
+    <td align="center"><img src="axs/2.jpeg" alt="AxSound — screenshot 2" width="260"/></td>
+    <td align="center"><img src="axs/3.jpeg" alt="AxSound — screenshot 3" width="260"/></td>
   </tr>
   <tr>
-    <td align="center"><img src="axs/4.jpeg" alt="AxSound — capture d'écran 4" width="260"/></td>
-    <td align="center"><img src="axs/5.jpeg" alt="AxSound — capture d'écran 5" width="260"/></td>
+    <td align="center"><img src="axs/4.jpeg" alt="AxSound — screenshot 4" width="260"/></td>
+    <td align="center"><img src="axs/5.jpeg" alt="AxSound — screenshot 5" width="260"/></td>
     <td></td>
   </tr>
 </table>
 
 ---
 
-## 🌟 Fonctionnalités Clés
+## 🌟 Key Features
 
-### 🔊 Moteur de Volume Maximal (Jusqu'à 400% — Plus fort que VLC)
-- **Amplification matérielle sûre** : Utilise `android.media.audiofx.LoudnessEnhancer` raccordé directement à la session audio ExoPlayer.
-- **Limiteur Brickwall intégré** : Sur Android 9+ (API 28+), un limiteur `DynamicsProcessing` (-0.5 dBFS, attaque 1 ms, relâchement 50 ms) protège les haut-parleurs contre la saturation numérique et l'écrêtage.
-- **Profils par sortie** : Mémorisation des niveaux d'amplification distincts pour Haut-parleur, Casque filaire et Bluetooth.
-- **Avertissement de protection auditive** : Alerte explicite avant tout dépassement du seuil de 200% (+6 dB).
+### 🔊 Max Volume Engine (Up to 400% — Louder than VLC)
+- **Safe hardware amplification**: uses `android.media.audiofx.LoudnessEnhancer` wired directly to the ExoPlayer audio session.
+- **Built-in brickwall limiter**: on Android 9+ (API 28+), a `DynamicsProcessing` limiter (-0.5 dBFS, 1 ms attack, 50 ms release) protects the speakers from digital clipping.
+- **Per-output profiles**: distinct boost levels are remembered for Speaker, Wired Headset and Bluetooth.
+- **Hearing protection warning**: an explicit alert before crossing the 200% (+6 dB) threshold.
 
-### 🔋 Efficacité Énergétique & Mode Éco (DSP Audio Offload)
-- **Décodage DSP direct** : En *Mode Efficacité*, le décodage s'effectue directement sur le DSP basse consommation (`AudioOffloadPreferences`), permettant au processeur central (CPU) de rester en veille profonde ($\sim 1.8\%$ de batterie/heure écran éteint).
-- **Gestion intelligente du WakeLock** : Configuration `setWakeMode(C.WAKE_MODE_LOCAL)` garantissant qu'aucun verrou d'éveil n'est maintenu hors lecture.
-- **Libération automatique des ressources** : Mise en veille complète et libération des effets après 10 minutes d'inactivité.
-- **Fréquence d'affichage optimisée** : Visualiseur de spectre bridé à 30 fps et barre de progression à 1 Hz, stoppés net lorsque l'écran est éteint.
+### 🔋 Power Efficiency & Eco Mode (DSP Audio Offload)
+- **Direct DSP decoding**: in *Efficiency Mode*, decoding runs on the low-power DSP (`AudioOffloadPreferences`), letting the main CPU stay in deep sleep (~1.8% battery/hour with the screen off).
+- **Smart WakeLock handling**: `setWakeMode(C.WAKE_MODE_LOCAL)` guarantees no wake lock is held outside of playback.
+- **Automatic resource release**: full shutdown and effects release after 10 minutes of inactivity.
+- **Optimized refresh rate**: spectrum visualizer capped at 30 fps and progress bar at 1 Hz, both stopped completely when the screen is off.
 
-### 🎨 Personnalisation Graphique Poussée
-- **Modes d'affichage** : Thème Clair, Sombre, Système et **Noir Pur AMOLED** (`#000000`).
-- **Nuancier de 16+ couleurs d'accentuation** + sélecteur personnalisé HEX/HSV.
-- **Gradients immersifs** : Presets Midnight, Cyberpunk, Sunset, Ocean, Aurora, Forest, Rose et Electric.
-- **Thématisation Dynamique** : Support de Material You (papier peint système) et extraction adaptative des couleurs de la pochette d'album (*Palette API*).
-- **Import / Export de Thèmes** au format JSON sans redémarrage de l'application.
+### 🎨 Deep Visual Customization
+- **Display modes**: Light, Dark, System and **Pure Black AMOLED** (`#000000`).
+- **16+ accent colors** plus a custom HEX/HSV picker.
+- **Immersive gradients**: Midnight, Cyberpunk, Sunset, Ocean, Aurora, Forest, Rose and Electric presets.
+- **Dynamic theming**: Material You (system wallpaper) support and adaptive album-art color extraction (*Palette API*).
+- **Theme Import / Export** as JSON without restarting the app.
 
-### 🎧 Formats Audio & Moteur de Lecture
-- **Prise en charge universelle** : MP3, AAC, M4A, FLAC, WAV, OGG, Opus, AMR, MIDI, MKA, 3GP, AIFF, WMA et ALAC.
-- **Badges Hi-Res** : Détection automatique des flux haute résolution (ex. `HI-RES • FLAC • 24-bit • 96 kHz`).
-- **Gestion des paroles** : Paroles synchronisées avec fichiers `.lrc` ou balises intégrées.
-- **Robustesse** : Reprise transparente et saut automatique sans crash en cas de fichier endommagé ou corrompu.
-- **Égaliseur graphique** : 5 bandes, renforcement des basses (*Bass Boost*), spatialisateur (*Virtualizer*) et préréglages studio.
+### 🎧 Audio Formats & Playback Engine
+- **Universal support**: MP3, AAC, M4A, FLAC, WAV, OGG, Opus, AMR, MIDI, MKA, 3GP, AIFF, WMA and ALAC.
+- **Hi-Res badges**: automatic detection of high-resolution streams (e.g. `HI-RES • FLAC • 24-bit • 96 kHz`).
+- **Lyrics support**: synced lyrics from `.lrc` files or embedded tags.
+- **Robustness**: transparent recovery and automatic skip without a crash on damaged or corrupted files.
+- **Graphic equalizer**: 5 bands, Bass Boost, Virtualizer and studio presets.
 
 ---
 
 ## 🏗️ Architecture & Technologies
 
-AxSound respecte les principes de la **Clean Architecture** et du patron **MVVM** :
+AxSound follows **Clean Architecture** principles and the **MVVM** pattern:
 
-- **Langage** : Kotlin
-- **Interface Utilisateur** : Jetpack Compose + Material Design 3
-- **Moteur Audio** : AndroidX Media3 (ExoPlayer + `MediaSessionService`)
-- **Persistance Locale** : Room Database (Favoris, Playlists, Historique, Cache métadonnées et ReplayGain)
-- **Préférences** : Jetpack DataStore Preferences
-- **Chargement d'Images** : Coil (avec cache mémoire & disque et redimensionnement strict)
-- **Navigation** : Navigation Compose avec transitions fluides
+- **Language**: Kotlin
+- **UI**: Jetpack Compose + Material Design 3
+- **Audio engine**: AndroidX Media3 (ExoPlayer + `MediaSessionService`)
+- **Local persistence**: Room database (favorites, playlists, history, metadata cache and ReplayGain)
+- **Preferences**: Jetpack DataStore Preferences
+- **Image loading**: Coil (with memory & disk caching and strict resizing)
+- **Navigation**: Navigation Compose with smooth transitions
 
 ---
 
-## 🚀 Compilation & Développement Local
+## 🚀 Building & Local Development
 
-### Prérequis
-- **Android Studio** Ladybug (2024.2+) ou supérieur
-- **JDK** : Version 17 ou 21
-- **Android SDK** : Compile SDK 36, Target SDK 35, Min SDK 26
+### Prerequisites
+- **Android Studio** Ladybug (2024.2+) or newer
+- **JDK**: version 17 or 21
+- **Android SDK**: Compile SDK 36, Target SDK 35, Min SDK 26
 
-### Cloner et compiler le projet
+### Clone and build
 
 ```bash
-# Cloner le dépôt
-git clone https://github.com/votre-compte/AxSound.git
+# Clone the repository
+git clone https://github.com/Alexis-Mupole/AxSound.git
 cd AxSound
 
-# Compiler le projet en mode Debug
+# Build the project in Debug mode
 gradle assembleDebug
 
-# Lancer la suite de tests unitaires et Robolectric
+# Run the unit and Robolectric test suites
 gradle testDebugUnitTest
 ```
 
-L'APK généré se trouvera dans : `app/build/outputs/apk/debug/app-debug.apk`.
+The generated APK will be located at: `app/build/outputs/apk/debug/app-debug.apk`.
 
 ---
 
-## 🤝 Contribuer au Projet
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! Pour proposer une amélioration, corriger un bug ou soumettre une traduction :
-1. Consultez notre guide de contribution : [CONTRIBUTING.md](CONTRIBUTING.md).
-2. Respectez notre code de conduite : [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Contributions are welcome! To suggest an improvement, fix a bug or submit a translation:
+1. Read our contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Follow our code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est distribué sous licence open-source **Apache 2.0**. Consultez [LICENSE.md](LICENSE.md) pour plus de détails.
+This project is released under the open-source **Apache 2.0** license. See [LICENSE.md](LICENSE.md) for details.

@@ -1,26 +1,28 @@
-# Journal des Modifications (Changelog) 📦
+# Changelog 📦
 
-Toutes les modifications notables apportées au projet **AxSound** seront documentées dans ce fichier.
+**English | [Français](CHANGELOG.fr.md)**
 
-Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/) et ce projet adhère à la [Gestion Sémantique de Version](https://semver.org/lang/fr/).
+All notable changes made to the **AxSound** project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
 ## [1.0.0] - 2026-10-07
 
-### Ajouté (Added)
-- **Moteur de Lecture Media3** : Intégration d'ExoPlayer et de `MediaSessionService` avec commandes de notification et gestion du détachement du casque.
-- **Amplification de Volume jusqu'à 400%** : Moteur de gain `LoudnessEnhancer` (+12 dB max) avec limiteur de protection `DynamicsProcessing` (-0.5 dBFS) sur Android 9+.
-- **Mode Efficacité Énergétique (Audio Offload)** : Décodage matériel direct sur DSP basse consommation lorsque les effets logiciels sont inactifs.
-- **Égaliseur Graphique** : Égaliseur 5 bandes avec préréglages studio, amplification des basses (*Bass Boost*) et spatialisation (*Virtualizer*).
-- **Thématisation & Personnalisation** :
-  - Thèmes Clair, Sombre et **Noir Pur AMOLED**.
-  - Nuancier de 16+ couleurs d'accentuation et sélecteur personnalisé HEX/HSV.
-  - 8 thèmes de dégradés d'arrière-plan (Midnight, Cyberpunk, Sunset, Ocean, etc.).
-  - Support de Material You (papier peint dynamique) et couleurs adaptatives de la pochette d'album.
-  - Exportation et importation de configurations de thèmes en JSON.
-- **Gestion Complète de la Bibliothèque** : 8 onglets de navigation (Titres, Albums, Artistes, Dossiers, Playlists, Favoris, Récents, Meilleurs titres).
-- **Paroles Synchronisées** : Prise en charge des fichiers `.lrc` et des métadonnées de paroles intégrées.
-- **Mini Lecteur Flottant** : Barre de contrôle persistante avec gestes de balayage pour changer de piste.
-- **Persistance Locale** : Base de données Room pour les playlists, favoris, historique de lecture et cache de métadonnées.
-- **Support des Intentions Externes** : Capacité d'ouvrir et de lire des fichiers audio directement depuis les gestionnaires de fichiers.
+### Added
+- **Media3 Playback Engine**: Integration of ExoPlayer and `MediaSessionService` with notification controls and headset disconnect handling.
+- **Volume Boost up to 400%**: `LoudnessEnhancer` gain engine (+12 dB max) with a protective `DynamicsProcessing` limiter (-0.5 dBFS) on Android 9+.
+- **Power Efficiency Mode (Audio Offload)**: Direct hardware decoding on the low-power DSP when software effects are inactive.
+- **Graphic Equalizer**: 5-band equalizer with studio presets, Bass Boost and Virtualizer.
+- **Theming & Customization**:
+  - Light, Dark and **Pure Black AMOLED** themes.
+  - 16+ accent colors and a custom HEX/HSV picker.
+  - 8 background gradient themes (Midnight, Cyberpunk, Sunset, Ocean, etc.).
+  - Material You support (dynamic wallpaper) and adaptive album-art colors.
+  - Theme configuration export and import as JSON.
+- **Complete Library Management**: 8 navigation tabs (Tracks, Albums, Artists, Folders, Playlists, Favorites, Recent, Top Tracks).
+- **Synced Lyrics**: Support for `.lrc` files and embedded lyrics tags.
+- **Floating Mini Player**: Persistent control bar with swipe gestures to change track.
+- **Local Persistence**: Room database for playlists, favorites, play history and metadata cache.
+- **External Intent Support**: Ability to open and play audio files directly from file managers.

@@ -1,104 +1,104 @@
-# Guide de Contribution à AxSound 🤝
+# AxSound Contribution Guide 🤝
 
-Merci pour votre intérêt à contribuer à **AxSound** ! Ce projet est un lecteur audio open-source développé avec passion par et pour la communauté.
+Thank you for your interest in contributing to **AxSound**! This project is an open-source audio player developed with passion by and for the community.
 
-Ce document détaille les règles et bonnes pratiques pour contribuer efficacement.
-
----
-
-## 📋 Table des Matières
-1. [Code de Conduite](#code-de-conduite)
-2. [Comment Participer ?](#comment-participer-)
-3. [Processus de Pull Request (PR)](#processus-de-pull-request-pr)
-4. [Conventions de Commits et de Branches](#conventions-de-commits-et-de-branches)
-5. [Standards de Code Kotlin & Compose](#standards-de-code-kotlin--compose)
-6. [Exécution des Tests](#exécution-des-tests)
+This document details the rules and best practices for contributing effectively.
 
 ---
 
-## 1. Code de Conduite
-En participant à ce projet, vous vous engagez à respecter les règles de courtoisie et d'inclusivité définies dans notre [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+## 📋 Table of Contents
+1. [Code of Conduct](#1-code-of-conduct)
+2. [How to Participate?](#2-how-to-participate)
+3. [Pull Request (PR) Process](#3-pull-request-pr-process)
+4. [Commit & Branch Conventions](#4-commit--branch-conventions)
+5. [Kotlin & Compose Code Standards](#5-kotlin--compose-code-standards)
+6. [Running Tests](#6-running-tests)
 
 ---
 
-## 2. Comment Participer ?
-
-### 🐛 Signaler un Bug
-- Vérifiez d'abord dans l'onglet **Issues** de GitHub que le bug n'a pas déjà été signalé.
-- Si le bug est inédit, ouvrez une issue avec le modèle de bug :
-  - **Version d'Android** et modèle de l'appareil.
-  - **Format audio** concerné (ex: FLAC 24-bit, MP3 320 kbps).
-  - **Étapes claires** pour reproduire le problème.
-  - Comportement attendu vs comportement observé.
-  - Logs (Logcat) si applicables.
-
-### 💡 Proposer une Nouvelle Fonctionnalité
-- Ouvrez une issue en décrivant l'idée, le cas d'usage et les éventuels compromis sur l'autonomie de la batterie ou les performances.
-- Attendez une validation préliminaire avant d'écrire une quantité importante de code.
+## 1. Code of Conduct
+By participating in this project, you agree to abide by the rules of courtesy and inclusivity defined in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 
-## 3. Processus de Pull Request (PR)
+## 2. How to Participate?
 
-1. **Forker** le dépôt et cloner votre copie locale.
-2. Créez une nouvelle branche pour vos modifications :
+### 🐛 Report a Bug
+- First check the GitHub **Issues** tab to make sure the bug has not already been reported.
+- If the bug is new, open an issue using the bug template:
+  - **Android version** and device model.
+  - **Audio format** involved (e.g. FLAC 24-bit, MP3 320 kbps).
+  - **Clear steps** to reproduce the problem.
+  - Expected vs. actual behavior.
+  - Logs (Logcat) if applicable.
+
+### 💡 Propose a New Feature
+- Open an issue describing the idea, the use case and any trade-offs regarding battery life or performance.
+- Wait for preliminary approval before writing a large amount of code.
+
+---
+
+## 3. Pull Request (PR) Process
+
+1. **Fork** the repository and clone your local copy.
+2. Create a new branch for your changes:
    ```bash
-   git checkout -b feature/nom-de-la-fonctionnalite
+   git checkout -b feature/feature-name
    ```
-3. Apportez vos modifications en respectant les standards du projet.
-4. Assurez-vous que l'ensemble des tests passent :
+3. Make your changes while following the project's standards.
+4. Make sure the whole test suite passes:
    ```bash
    gradle testDebugUnitTest
    ```
-5. Vérifiez la compilation complète :
+5. Verify the full build:
    ```bash
    gradle assembleDebug
    ```
-6. Poussez votre branche sur votre fork et ouvrez une **Pull Request** vers la branche `main` du dépôt principal.
-7. Décrivez clairement vos modifications dans la description de la PR.
+6. Push your branch to your fork and open a **Pull Request** against the `main` branch of the upstream repository.
+7. Clearly describe your changes in the PR description.
 
 ---
 
-## 4. Conventions de Commits et de Branches
+## 4. Commit & Branch Conventions
 
-### Nommage des Branches
-- `feature/<description>` : pour les nouvelles fonctionnalités (ex: `feature/replaygain-scanner`)
-- `bugfix/<description>` : pour la correction de bugs (ex: `bugfix/flac-artwork-crash`)
-- `docs/<description>` : pour la documentation
-- `refactor/<description>` : pour les refactorisations sans changement fonctionnel
+### Branch Naming
+- `feature/<description>`: new features (e.g. `feature/replaygain-scanner`)
+- `bugfix/<description>`: bug fixes (e.g. `bugfix/flac-artwork-crash`)
+- `docs/<description>`: documentation
+- `refactor/<description>`: refactoring without functional changes
 
-### Messages de Commit (Conventional Commits)
-Utilisez le format conventionnel :
-- `feat: ajouter le support des égaliseurs 10 bandes`
-- `fix: corriger l'affichage du format badge sur les fichiers WAV`
-- `perf: optimiser le throttle de la barre de progression à 1 Hz`
-- `docs: mettre à jour le README avec les détails d'Audio Offload`
-- `test: ajouter un test unitaire pour le calcul du boost de volume`
-
----
-
-## 5. Standards de Code Kotlin & Compose
-
-- **Clean Architecture & MVVM** :
-  - La logique métier et d'accès aux données doit se trouver dans le package `data/` et `playback/`.
-  - Les Composables doivent rester découplés et se trouver dans `ui/`.
-- **Jetpack Compose** :
-  - Toujours utiliser `Modifier.testTag("...")` pour les éléments interactifs majeurs.
-  - Respecter la taille de cible tactile minimale de 48 dp pour l'accessibilité.
-  - Utiliser `collectAsStateWithLifecycle()` pour observer les flux d'état dans les Composables.
-- **Gestion des Ressources Audio** :
-  - Ne jamais maintenir de `WakeLock` en dehors de la lecture active.
-  - Veiller à libérer les instances d'effets audio (`LoudnessEnhancer`, `Equalizer`, etc.) lors de l'arrêt du service.
+### Commit Messages (Conventional Commits)
+Use the conventional format:
+- `feat: add 10-band equalizer support`
+- `fix: correct format badge display on WAV files`
+- `perf: optimize progress bar throttling to 1 Hz`
+- `docs: update README with Audio Offload details`
+- `test: add unit test for volume boost calculation`
 
 ---
 
-## 6. Exécution des Tests
+## 5. Kotlin & Compose Code Standards
 
-Avant toute soumission de code, lancez la suite de tests :
+- **Clean Architecture & MVVM**:
+  - Business and data-access logic must live in the `data/` and `playback/` packages.
+  - Composables must stay decoupled and live in `ui/`.
+- **Jetpack Compose**:
+  - Always use `Modifier.testTag("...")` for major interactive elements.
+  - Respect the minimum 48 dp touch target size for accessibility.
+  - Use `collectAsStateWithLifecycle()` to observe state flows in Composables.
+- **Audio Resource Management**:
+  - Never hold a `WakeLock` outside of active playback.
+  - Make sure to release audio effect instances (`LoudnessEnhancer`, `Equalizer`, etc.) when the service stops.
+
+---
+
+## 6. Running Tests
+
+Before submitting any code, run the test suite:
 ```bash
 gradle testDebugUnitTest
 ```
 
-Si vous ajoutez une nouvelle fonctionnalité complexe, veillez à accompagner votre code de tests unitaires ou de tests Robolectric correspondants dans `app/src/test/java/`.
+If you add a complex feature, make sure to ship corresponding unit tests or Robolectric tests in `app/src/test/java/`.
 
-Merci d'aider à rendre **AxSound** encore meilleur pour tous les amateurs de musique ! 🎶
+Thanks for helping make **AxSound** even better for every music lover! 🎶
