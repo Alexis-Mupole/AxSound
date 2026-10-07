@@ -25,6 +25,23 @@
 
 ---
 
+## 📸 Captures d'écran
+
+<table>
+  <tr>
+    <td align="center"><img src="axs/1.jpeg" alt="AxSound — capture d'écran 1" width="260"/></td>
+    <td align="center"><img src="axs/2.jpeg" alt="AxSound — capture d'écran 2" width="260"/></td>
+    <td align="center"><img src="axs/3.jpeg" alt="AxSound — capture d'écran 3" width="260"/></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="axs/4.jpeg" alt="AxSound — capture d'écran 4" width="260"/></td>
+    <td align="center"><img src="axs/5.jpeg" alt="AxSound — capture d'écran 5" width="260"/></td>
+    <td></td>
+  </tr>
+</table>
+
+---
+
 ## 🌟 Fonctionnalités Clés
 
 ### 🔊 Moteur de Volume Maximal (Jusqu'à 400% — Plus fort que VLC)
