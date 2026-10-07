@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AxSound</string>
+    <string name="playback_notification_channel_name">AxSound Playback Controls</string>
+</resources>

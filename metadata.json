@@ -1,0 +1,6 @@
+{
+  "name": "AxSound",
+  "description": "High-fidelity offline music player with up to 400% safe volume boost, DSP audio offload efficiency mode, dynamic gradients, equalizer, and seamless queue management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
